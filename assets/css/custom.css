@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Ubuntu";
+    src: url(../fonts/Ubuntu-Regular.ttf), 
+    url(../fonts/Ubuntu-MediumItalic.ttf), 
+    url(../fonts/Ubuntu-Medium.ttf), 
+    url(../fonts/Ubuntu-LightItalic.ttf),
+    url(../fonts/Ubuntu-Light.ttf),
+    url(../fonts/Ubuntu-Italic.ttf)
+    url(../fonts/Ubuntu-BoldItalic.ttf),
+    url(../fonts/Ubuntu-Bold.ttf);
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+}
