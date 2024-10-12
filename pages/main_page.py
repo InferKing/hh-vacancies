@@ -18,7 +18,7 @@ tab1 = dbc.Container([
         ]),
     ], is_open=False, size="xl", centered=True),
     dbc.Row([
-        html.H1("Сборник вакансий с hh.ru", className="text-center pt-3"),
+        html.H1("Поиск вакансий с hh.ru", className="text-center pt-3"),
     ]),
     dbc.Row([
         dbc.Col([
@@ -41,7 +41,7 @@ tab1 = dbc.Container([
             id="grid", 
             className="ag-theme-alpine", 
             style={"display": "none"}, dashGridOptions={
-                'pagination':True, 
+                'pagination': True, 
                 'paginationPageSize': 20, 
                 'domLayout': 'autoHeight',
                 },

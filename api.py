@@ -13,12 +13,12 @@ class HHParser:
 
         self.__raw_json = None
         self.__base_match_fields = [
-            {"field": "Подробнее", "cellRenderer": "GetMoreInfo", "sortable": False, "width": 180},
-            {"field": "Название вакансии", "cellRenderer": "VacancyLink", "filter": True},
+            {"field": " ", "cellRenderer": "GetMoreInfo", "sortable": False, "width": 60, "resizable": False},
+            {"field": "Вакансия", "cellRenderer": "VacancyLink", "filter": True},
             {"field": "Дата публикации", "filter": True, "width": 150},
             {"field": "Регион", "filter": True},
-            {"field": "Зарплата от", "cellDataType": "number", "filter": True, "width": 130},
-            {"field": "Зарплата до", "cellDataType": "number", "filter": True, "width": 130},
+            {"field": "Зарплата от", "cellDataType": "number", "filter": True, "width": 140},
+            {"field": "Зарплата до", "cellDataType": "number", "filter": True, "width": 140},
             {"field": "Валюта", "filter": True, "width": 90},
             {"field": "Компания", "filter": True},
             {"field": "Опыт работы", "filter": True},
@@ -87,7 +87,7 @@ class HHParser:
 
         simple_columns = {
             "id": "ID",
-            "name": "Название вакансии",
+            "name": "Вакансия",
             "published_at": "Дата публикации",
             "alternate_url": "Ссылка"
         }
