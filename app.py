@@ -10,4 +10,4 @@ app.layout = html.Div([
 ])
 
 if __name__ == '__main__':
-    app.run(**DevelopmentConfig().to_dict())
+    app.run(**ProductionConfig().to_dict())
