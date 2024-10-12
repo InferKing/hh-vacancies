@@ -14,7 +14,7 @@ class HHParser:
         self.__raw_json = None
         self.__base_match_fields = [
             {"field": " ", "cellRenderer": "GetMoreInfo", "sortable": False, "width": 60, "resizable": False},
-            {"field": "Вакансия", "cellRenderer": "VacancyLink", "filter": True},
+            {"field": "Название вакансии", "cellRenderer": "VacancyLink", "filter": True},
             {"field": "Дата публикации", "filter": True, "width": 150},
             {"field": "Регион", "filter": True},
             {"field": "Зарплата от", "cellDataType": "number", "filter": True, "width": 140},
@@ -87,7 +87,7 @@ class HHParser:
 
         simple_columns = {
             "id": "ID",
-            "name": "Вакансия",
+            "name": "Название вакансии",
             "published_at": "Дата публикации",
             "alternate_url": "Ссылка"
         }
