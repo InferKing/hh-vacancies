@@ -1,8 +1,8 @@
 from dash import Dash, html, dcc, page_container
-import dash_bootstrap_components as dbc
+from dash_bootstrap_components import themes, icons
 from config import DevelopmentConfig
 
-app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], use_pages=True)
+app = Dash(__name__, external_stylesheets=[themes.SIMPLEX, icons.BOOTSTRAP], use_pages=True)
 
 app.layout = html.Div([
     dcc.Store(id='store'),
