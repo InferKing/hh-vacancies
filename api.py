@@ -63,9 +63,6 @@ class HHParser:
 
         picked_data = self.__make_df(by_id=True)
         return picked_data
-    
-    # def __find_row_by_id(self, id: str) -> pd.DataFrame:
-    #     return self.dataframe[self.dataframe["ID"] == id]
 
 
     def __make_df(self, by_id: bool = False) -> pd.DataFrame: 
@@ -75,9 +72,10 @@ class HHParser:
         if by_id:
             df["Описание"] = [json_data[0]["description"]]
             data = ""
+            key_skills = json_data[0].get("key_skills")
 
-            if json_data[0].get("key_skills"):
-                for skill in json_data[0]["key_skills"]:
+            if key_skills:
+                for skill in key_skills:
                     data += skill["name"] + ", "
 
                 data = data[:-2]
