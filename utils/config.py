@@ -5,7 +5,7 @@ class BaseConfig:
         self.debug = True
     
     def to_dict(self):
-        return self.__dict__
+        return {key: value for key, value in self.__dict__.items() if key != "data"}
 
 
 class ProductionConfig(BaseConfig):

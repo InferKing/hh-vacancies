@@ -10,26 +10,7 @@ class HHParser:
     def __init__(self):
         self.__base_url = "https://api.hh.ru/vacancies"
         self.__url_by_id = self.__base_url + "/{id}"
-
         self.__raw_json = None
-        self.__base_match_fields = [
-            {"field": " ", "cellRenderer": "GetMoreInfo", "sortable": False, "width": 60, "resizable": False},
-            {"field": "Название вакансии", "cellRenderer": "VacancyLink", "filter": True},
-            {"field": "Дата публикации", "filter": True, "width": 150},
-            {"field": "Регион", "filter": True},
-            {"field": "Зарплата от", "cellDataType": "number", "filter": True, "width": 140},
-            {"field": "Зарплата до", "cellDataType": "number", "filter": True, "width": 140},
-            {"field": "Валюта", "filter": True, "width": 90},
-            {"field": "Компания", "filter": True},
-            {"field": "Опыт работы", "filter": True},
-            {"field": "График работы", "filter": True},
-            {"field": "Тип занятости", "filter": True}
-        ]
-
-
-    @property
-    def grid_fields(self) -> list[dict]:
-        return self.__base_match_fields
 
 
     @property
@@ -57,7 +38,6 @@ class HHParser:
 
 
     def make_request_by_id(self, id: str) -> pd.DataFrame:
-        # TODO: Add error handling
         response = requests.get(self.__url_by_id.format(id=id))
         self.__raw_json = response.json()
 
