@@ -13,7 +13,10 @@ layout = dbc.Container([
         dbc.ModalBody([
             AgGrid(id="modal_grid", className="ag-theme-alpine", dashGridOptions={'domLayout': 'autoHeight'}),
             html.Div([
-                html.Div(id="modal_skills", className="my-2"),
+                html.Div([
+                    html.Div("Навыки:", className="fw-bold"),
+                    html.Div(id="modal_skills", className="my-2"),
+                ]),
                 dcc.Markdown(id="modal_description", dangerously_allow_html=True),
             ], className="p-2 bg-light rounded")
         ]),
@@ -85,6 +88,15 @@ def on_more_info_clicked(render, data):
     df = parser.make_request_by_id(from_grid["ID"])
     header = df["Название вакансии"].iloc[0]
     skills = df["Навыки"].iloc[0]
+    skills = skills.split(", ")
     description = df["Описание"].iloc[0]
 
-    return True, header, df.to_dict("records"), parser.grid_fields_by_id, "Навыки: " + skills, description
+    view_skills = dbc.Row(
+        dbc.Col([
+            html.Div(skill, className="badge bg-primary me-1 px-3 py-2 mb-1") for skill in skills
+        ])
+    )
+
+    settings = AGColumnSettings()
+
+    return True, header, df.to_dict("records"), settings.grid_fields_by_id, view_skills, description

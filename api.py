@@ -13,11 +13,6 @@ class HHParser:
         self.__raw_json = None
 
 
-    @property
-    def grid_fields_by_id(self) -> list[dict]:
-        return self.__base_match_fields[1:]
-
-
     def make_request_all(self, **kwargs) -> pd.DataFrame:
         kwargs["per_page"] = 100
         max_pages = kwargs.get("max_pages", 10)

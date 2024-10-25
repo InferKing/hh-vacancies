@@ -18,3 +18,8 @@ class AGColumnSettings:
     @property
     def grid_fields(self) -> list[dict]:
         return self.__base_match_fields
+    
+    
+    @property
+    def grid_fields_by_id(self) -> list[dict]:
+        return self.__base_match_fields[1:]
