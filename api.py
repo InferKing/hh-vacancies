@@ -1,8 +1,6 @@
 import requests
 import pandas as pd
 from numpy import nan
-from random import uniform
-from time import sleep
 from datetime import datetime
 
 
@@ -24,8 +22,6 @@ class HHParser:
                 response = requests.get(self.__base_url, params=kwargs)
                 self.__raw_json = response.json()
                 df = pd.concat([df, self.__make_df()], axis=0, ignore_index=True)
-
-                sleep(uniform(0.5, 1))
         except requests.HTTPError as e:
             print(e)
 
